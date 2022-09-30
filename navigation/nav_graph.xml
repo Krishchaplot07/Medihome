@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homepage">
+
+    <fragment
+        android:id="@+id/homepage"
+        android:name="com.krish.medihome.homepage"
+        android:label="fragment_homepage"
+        tools:layout="@layout/fragment_homepage" >
+        <action
+            android:id="@+id/action_homepage_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.krish.medihome.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_medicine_category"
+            app:destination="@id/medicine_category" />
+        <action
+            android:id="@+id/action_loginFragment_to_homepage"
+            app:destination="@id/homepage" />
+    </fragment>
+    <fragment
+        android:id="@+id/medicine_category"
+        android:name="com.krish.medihome.medicine_category"
+        android:label="fragment_medicine_category"
+        tools:layout="@layout/fragment_medicine_category" >
+        <action
+            android:id="@+id/action_medicine_category_to_tablets"
+            app:destination="@id/tablets" />
+        <action
+            android:id="@+id/action_medicine_category_to_healthdevices"
+            app:destination="@id/healthdevices" />
+    </fragment>
+    <fragment
+        android:id="@+id/tablets"
+        android:name="com.krish.medihome.tablets"
+        android:label="fragment_tablets"
+        tools:layout="@layout/fragment_tablets" />
+    <fragment
+        android:id="@+id/healthdevices"
+        android:name="com.krish.medihome.healthdevices"
+        android:label="fragment_healthdevices"
+        tools:layout="@layout/fragment_healthdevices" />
+</navigation>
